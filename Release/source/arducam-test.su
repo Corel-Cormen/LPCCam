@@ -1,0 +1,3 @@
+arducam-test.cpp:53:6:void delay(uint32_t)	0	static
+arducam-test.cpp:58:6:void arducam_test()	24	static
+arducam-test.cpp:97:5:int main()	8	static

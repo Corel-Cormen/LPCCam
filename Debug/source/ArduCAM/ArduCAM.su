@@ -1,0 +1,75 @@
+fsl_gpio.h:153:20:void GPIO_PinWrite(GPIO_Type*, uint32_t, uint32_t, uint8_t)	24	static
+ArduCAM.cpp:136:17:status_t send_i2c(uint8_t, uint8_t*, uint8_t)	16	static
+ArduCAM.cpp:147:17:status_t read_i2c(uint8_t, uint8_t*, uint8_t)	16	static
+ArduCAM.cpp:158:17:status_t send_and_read_spi(uint8_t*, uint8_t, uint8_t*)	24	static
+ArduCAM.cpp:168:17:status_t send_spi(uint8_t*, uint8_t)	16	static
+ArduCAM.cpp:173:13:void delay(uint32_t)	16	static
+ArduCAM.cpp:180:1:ArduCAM::ArduCAM()	16	static
+ArduCAM.cpp:185:1:ArduCAM::ArduCAM(uint8_t, int)	24	static
+ArduCAM.cpp:278:6:void ArduCAM::InitCAM()	24	static
+ArduCAM.cpp:729:6:void ArduCAM::flush_fifo()	16	static
+ArduCAM.cpp:734:6:void ArduCAM::start_capture()	16	static
+ArduCAM.cpp:739:6:void ArduCAM::clear_fifo_flag()	16	static
+ArduCAM.cpp:744:10:uint32_t ArduCAM::read_fifo_length()	32	static
+ArduCAM.cpp:769:6:void ArduCAM::set_fifo_burst()	24	static
+ArduCAM.cpp:781:6:void ArduCAM::CS_HIGH()	16	static
+ArduCAM.cpp:785:6:void ArduCAM::CS_LOW()	16	static
+ArduCAM.cpp:790:9:uint8_t ArduCAM::read_fifo()	24	static
+ArduCAM.cpp:797:9:uint8_t ArduCAM::read_reg(uint8_t)	24	static
+ArduCAM.cpp:808:6:void ArduCAM::write_reg(uint8_t, uint8_t)	16	static
+ArduCAM.cpp:818:6:void ArduCAM::set_bit(uint8_t, uint8_t)	24	static
+ArduCAM.cpp:825:6:void ArduCAM::clear_bit(uint8_t, uint8_t)	24	static
+ArduCAM.cpp:833:9:uint8_t ArduCAM::get_bit(uint8_t, uint8_t)	24	static
+ArduCAM.cpp:845:6:void ArduCAM::set_mode(uint8_t)	16	static
+ArduCAM.cpp:864:9:uint8_t ArduCAM::bus_write(int, int)	32	static
+ArduCAM.cpp:879:9:uint8_t ArduCAM::bus_read(int)	24	static
+ArduCAM.cpp:922:6:void ArduCAM::OV3640_set_JPEG_size(uint8_t)	16	static
+ArduCAM.cpp:961:6:void ArduCAM::OV2640_set_JPEG_size(uint8_t)	16	static
+ArduCAM.cpp:1000:6:void ArduCAM::OV5642_set_RAW_size(uint8_t)	16	static
+ArduCAM.cpp:1023:6:void ArduCAM::OV5642_set_JPEG_size(uint8_t)	16	static
+ArduCAM.cpp:1059:6:void ArduCAM::OV5640_set_JPEG_size(uint8_t)	16	static
+ArduCAM.cpp:1100:6:void ArduCAM::set_format(uint8_t)	16	static
+ArduCAM.cpp:1110:7:void ArduCAM::OV2640_set_Light_Mode(uint8_t)	16	static
+ArduCAM.cpp:1155:7:void ArduCAM::OV3640_set_Light_Mode(uint8_t)	16	static
+ArduCAM.cpp:1194:7:void ArduCAM::OV5642_set_Light_Mode(uint8_t)	16	static
+ArduCAM.cpp:1268:7:void ArduCAM::OV5640_set_Light_Mode(uint8_t)	16	static
+ArduCAM.cpp:1353:7:void ArduCAM::OV2640_set_Color_Saturation(uint8_t)	16	static
+ArduCAM.cpp:1402:7:void ArduCAM::OV3640_set_Color_Saturation(uint8_t)	16	static
+ArduCAM.cpp:1443:7:void ArduCAM::OV5640_set_Color_Saturation(uint8_t)	16	static
+ArduCAM.cpp:1565:7:void ArduCAM::OV5642_set_Color_Saturation(uint8_t)	16	static
+ArduCAM.cpp:1633:7:void ArduCAM::OV2640_set_Brightness(uint8_t)	16	static
+ArduCAM.cpp:1682:7:void ArduCAM::OV3640_set_Brightness(uint8_t)	16	static
+ArduCAM.cpp:1734:7:void ArduCAM::OV5642_set_Brightness(uint8_t)	16	static
+ArduCAM.cpp:1799:7:void ArduCAM::OV5640_set_Brightness(uint8_t)	16	static
+ArduCAM.cpp:1874:7:void ArduCAM::OV2640_set_Contrast(uint8_t)	16	static
+ArduCAM.cpp:1934:7:void ArduCAM::OV3640_set_Contrast(uint8_t)	16	static
+ArduCAM.cpp:1997:7:void ArduCAM::OV5642_set_Contrast(uint8_t)	16	static
+ArduCAM.cpp:2068:7:void ArduCAM::OV5640_set_Contrast(uint8_t)	16	static
+ArduCAM.cpp:2131:7:void ArduCAM::OV5642_set_hue(uint8_t)	16	static
+ArduCAM.cpp:2225:7:void ArduCAM::OV2640_set_Special_effects(uint8_t)	16	static
+ArduCAM.cpp:2303:7:void ArduCAM::OV3640_set_Special_effects(uint8_t)	16	static
+ArduCAM.cpp:2370:7:void ArduCAM::OV5642_set_Special_effects(uint8_t)	16	static
+ArduCAM.cpp:2418:7:void ArduCAM::OV5640_set_Special_effects(uint8_t)	16	static
+ArduCAM.cpp:2510:7:void ArduCAM::OV3640_set_Exposure_level(uint8_t)	16	static
+ArduCAM.cpp:2577:7:void ArduCAM::OV5642_set_Exposure_level(uint8_t)	16	static
+ArduCAM.cpp:2675:7:void ArduCAM::OV3640_set_Sharpness(uint8_t)	16	static
+ArduCAM.cpp:2712:7:void ArduCAM::OV3640_set_Mirror_Flip(uint8_t)	16	static
+ArduCAM.cpp:2742:7:void ArduCAM::OV5642_set_Sharpness(uint8_t)	16	static
+ArduCAM.cpp:2799:7:void ArduCAM::OV5642_set_Mirror_Flip(uint8_t)	24	static
+ArduCAM.cpp:2847:7:void ArduCAM::OV5642_set_Compress_quality(uint8_t)	16	static
+ArduCAM.cpp:2865:7:void ArduCAM::OV5642_Test_Pattern(uint8_t)	16	static
+ArduCAM.cpp:2889:7:void ArduCAM::OV5640_set_Night_Mode(uint8_t)	16	static
+ArduCAM.cpp:2910:7:void ArduCAM::OV5640_set_Banding_Filter(uint8_t)	16	static
+ArduCAM.cpp:2945:8:void ArduCAM::OV5640_set_EV(uint8_t)	16	static
+ArduCAM.cpp:3016:5:int ArduCAM::wrSensorRegs8_8(const sensor_reg*)	32	static
+ArduCAM.cpp:3040:5:int ArduCAM::wrSensorRegs8_16(const sensor_reg*)	32	static
+ArduCAM.cpp:3071:5:int ArduCAM::wrSensorRegs16_8(const sensor_reg*)	32	static
+ArduCAM.cpp:3104:5:int ArduCAM::wrSensorRegs16_16(const sensor_reg*)	32	static
+ArduCAM.cpp:3132:6:uint8_t ArduCAM::wrSensorReg8_8(int, int)	32	static
+ArduCAM.cpp:3153:6:uint8_t ArduCAM::rdSensorReg8_8(uint8_t, uint8_t*)	32	static
+ArduCAM.cpp:3180:6:uint8_t ArduCAM::wrSensorReg8_16(int, int)	32	static
+ArduCAM.cpp:3202:6:uint8_t ArduCAM::rdSensorReg8_16(uint8_t, uint16_t*)	32	static
+ArduCAM.cpp:3233:6:uint8_t ArduCAM::wrSensorReg16_8(int, int)	32	static
+ArduCAM.cpp:3257:6:uint8_t ArduCAM::rdSensorReg16_8(uint16_t, uint8_t*)	32	static
+ArduCAM.cpp:3287:6:uint8_t ArduCAM::wrSensorReg16_16(int, int)	32	static
+ArduCAM.cpp:3315:6:uint8_t ArduCAM::rdSensorReg16_16(uint16_t, uint16_t*)	32	static

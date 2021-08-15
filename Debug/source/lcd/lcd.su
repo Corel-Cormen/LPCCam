@@ -1,0 +1,16 @@
+fsl_gpio.h:153:20:GPIO_PinWrite	24	static
+lcd.c:131:6:LCD_7seg	48	static
+lcd.c:157:6:SPI_Write_Byte	32	static
+lcd.c:177:6:SPI_Write_Words	40	static
+lcd.c:206:13:LCD_WriteReg	24	static
+lcd.c:213:13:LCD_WriteData_8Bit	24	static
+lcd.c:220:6:Driver_Delay_ms	24	static
+lcd.c:225:13:LCD_InitReg	8	static
+lcd.c:321:6:LCD_SetHome	8	static
+lcd.c:339:6:LCD_GramRefresh	8	static
+lcd.c:346:6:LCD_Init	16	static
+lcd.c:371:6:LCD_Set_Bitmap	24	static
+lcd.c:377:6:LCD_Clear	24	static
+lcd.c:383:6:LCD_Draw_Point	16	static
+lcd.c:388:6:LCD_Draw_Line	40	static
+lcd.c:431:6:LCD_Puts	40	static

@@ -1,0 +1,4 @@
+system_LPC55S69_cm33_core0.c:220:17:GetOsc32KFreq	0	static
+system_LPC55S69_cm33_core0.c:276:6:SystemCoreClockUpdate	16	static
+system_LPC55S69_cm33_core0.c:377:29:SystemInitHook	0	static
+system_LPC55S69_cm33_core0.c:241:28:SystemInit	8	static

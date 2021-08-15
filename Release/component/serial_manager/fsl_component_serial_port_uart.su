@@ -1,0 +1,6 @@
+fsl_component_serial_port_uart.c:159:25:Serial_UartInit	0	static
+fsl_component_serial_port_uart.c:209:25:Serial_UartDeinit	8	static
+fsl_component_serial_port_uart.c:310:25:Serial_UartWrite	0	static
+fsl_component_serial_port_uart.c:324:25:Serial_UartRead	0	static
+fsl_component_serial_port_uart.c:418:25:Serial_UartEnterLowpower	8	static
+fsl_component_serial_port_uart.c:434:25:Serial_UartExitLowpower	8	static

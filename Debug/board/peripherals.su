@@ -1,0 +1,4 @@
+peripherals.c:93:13:FLEXCOMM4_init	8	static
+peripherals.c:156:13:FLEXCOMM8_init	8	static
+peripherals.c:187:6:BOARD_InitPeripherals	8	static
+peripherals.c:197:6:BOARD_InitBootPeripherals	8	static
