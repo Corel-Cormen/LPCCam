@@ -1,5 +1,0 @@
-LPC55S69_cm33_core0.h:27493:24:Chip_GetVersion	16	static
-fsl_clock.h:722:20:CLOCK_EnableClock	24	static
-fsl_iocon.h:255:22:IOCON_PinMuxSet	24	static
-pin_mux.c:39:6:BOARD_InitBootPins	8	static
-pin_mux.c:73:6:BOARD_InitPins	24	static

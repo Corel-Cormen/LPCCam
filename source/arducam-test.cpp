@@ -65,7 +65,6 @@ void arducam_test(void)
 {
     /* arducam */
 	uint8_t temp = 0;
-	uint8_t temp_last = 0;
     uint8_t vid, pid;
 
     ArduCAM myCAM(OV5642, 100);
@@ -82,6 +81,7 @@ void arducam_test(void)
     	PRINTF("Incorrect ArduCAM SPI test register return value!\r\n");
     	return;
     }
+    delay(1000);
 
     myCAM.rdSensorReg16_8(OV5642_CHIPID_HIGH, &vid);
     myCAM.rdSensorReg16_8(OV5642_CHIPID_LOW, &pid);
@@ -92,101 +92,38 @@ void arducam_test(void)
     }
     else
     {
-    	uint8_t buf[256];
-    	uint8_t VL;
-    	size_t m = 0;
-    	uint8_t resolution = OV5642_320x240;
-    	size_t line = 320, column = 240;
-    	size_t length;
-    	bool is_header = false;
-
-    	PRINTF("Communication with OV542 success!\r\n");
-
-    	myCAM.set_format(JPEG);
+    	myCAM.set_format(RAW);
     	myCAM.InitCAM();
-    	myCAM.write_reg(ARDUCHIP_TIM, VSYNC_LEVEL_MASK);
-    	myCAM.clear_fifo_flag();
-    	myCAM.write_reg(ARDUCHIP_FRAMES, 0x03);
+    	myCAM.set_bit(ARDUCHIP_TIM, VSYNC_LEVEL_MASK);
+    	delay(100);
 
     	myCAM.flush_fifo();
     	myCAM.clear_fifo_flag();
-
-    	myCAM.OV5642_set_JPEG_size(OV5642_320x240);
+    	myCAM.OV5642_set_RAW_size(OV5642_640x480);
+    	myCAM.flush_fifo();
     	delay(1000);
 
+    	PRINTF("Start CAPTURE\r\n");
     	myCAM.start_capture();
-    	PRINTF("Start Capture\r\n");
-    	while( !myCAM.get_bit(ARDUCHIP_TRIG, CAP_DONE_MASK));
-    	PRINTF("Capture Done\r\n");
+    	while(!myCAM.get_bit(ARDUCHIP_TRIG, CAP_DONE_MASK));
+    	PRINTF("CAM Capture Done\r\n");
 
-    	length = myCAM.read_fifo_length();
-    	PRINTF("Length Capture = %d\r\n", length);
-
-    	if (length >= MAX_FIFO_SIZE) //8M
+    	int line = 640;
+    	int column = 480;
+    	uint8_t VL;
+    	for(int i = 0; i < line; i++)
     	{
-    		PRINTF("Over size.");
-    		return;
-    	}
-    	if (length == 0 ) //0 kb
-    	{
-    		PRINTF("Size is 0.");
-    		return;
+    		for(int j = 0; j < column; j++)
+    		{
+    			VL = myCAM.read_fifo();
+    			PRINTF("%d,", VL);
+    		}
+    		PRINTF("\r\n");
     	}
 
-    	myCAM.CS_LOW();
-    	myCAM.set_fifo_burst();
-    	while(length--)
-    	{
-    		temp_last = temp;
-    		temp = myCAM.read_fifo();
-
-    		if ( (temp == 0xD9) && (temp_last == 0xFF) )
-    		{
-    			buf[m++] = temp;
-    			myCAM.CS_HIGH();
-    			for(int i = 0; i < m; i++)
-    			{
-    				PRINTF("%d,", buf[i]);
-    			}
-    			PRINTF("\r\n");
-    			m = 0;
-    			is_header = false;
-    			myCAM.CS_LOW();
-    			myCAM.set_fifo_burst();
-    		}
-
-    		if(is_header == true)
-    		{
-    			if(m < 256)
-    			{
-    				buf[m++] = temp;
-    			}
-    			else
-    			{
-    				myCAM.CS_HIGH();
-    				for(int i = 0; i < m; i++)
-    				{
-    					PRINTF("%d,", buf[i]);
-    				}
-    				PRINTF("\r\n");
-    				m = 0;
-    				buf[m++] = temp;
-    				myCAM.CS_LOW();
-    				myCAM.set_fifo_burst();
-    			}
-    		}
-    		else if ((temp == 0xD8) & (temp_last == 0xFF))
-    		{
-    			is_header = true;
-    			myCAM.CS_HIGH();
-
-    			myCAM.CS_LOW();
-    			myCAM.set_fifo_burst();
-    			buf[m++] = temp_last;
-    			buf[m++] = temp;
-    		}
-    	}
-    	myCAM.CS_HIGH();
+    	PRINTF("END image\r\n");
+    	myCAM.clear_fifo_flag();
+    	delay(5000);
     }
 }
 
@@ -206,13 +143,13 @@ int main(void) {
     arducam_test();
 
     /* Force the counter to be placed into memory. */
-    volatile static int i = 0 ;
+//    volatile static int i = 0 ;
     /* Enter an infinite loop, just incrementing a counter. */
-    while(1) {
-        i++ ;
-        /* 'Dummy' NOP to allow source level single stepping of
-            tight while() loop */
-        __asm volatile ("nop");
-    }
+//    while(1) {
+//        i++ ;
+//        /* 'Dummy' NOP to allow source level single stepping of
+//            tight while() loop */
+//        __asm volatile ("nop");
+//    }
     return 0 ;
 }
